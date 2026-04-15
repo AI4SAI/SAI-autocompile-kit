@@ -1,0 +1,55 @@
+# MACE Training Configuration
+# Converted from command line arguments
+
+# Basic configuration
+name: "model"
+train_file: "train.xyz"
+E0s: "average"
+
+# Model configuration
+model: "MACE"
+num_interactions: 2
+num_channels: 128
+max_L: 0
+correlation: 3
+r_max: 6.0
+
+# Training parameters
+lr: 0.06
+swa_lr: 0.006
+forces_weight: 1000
+energy_weight: 40
+stress_weight: 10
+loss: "stress"
+compute_stress: true 
+
+# Data keys
+energy_key: "energy"
+forces_key: "forces"
+stress_key: "stress"
+
+# Batch configuration
+batch_size: 3
+valid_batch_size: 3
+
+# Training schedule
+max_num_epochs: 1300
+start_swa: 975
+scheduler_patience: 20
+patience: 100
+eval_interval: 5
+
+# Training options
+ema: true
+swa: true
+plot: true
+plot_frequency: 20
+error_table: "PerAtomMAE"
+
+# System configuration
+default_dtype: "float32"
+device: "cuda"
+seed: 123
+restart_latest: true
+save_cpu: true
+enable_cueq: true

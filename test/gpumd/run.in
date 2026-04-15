@@ -1,0 +1,5 @@
+potential   nep.txt
+velocity    1000
+
+ensemble    npt_mttk temp 1000 1000 aniso 0 0
+run        50000
