@@ -63,7 +63,7 @@ acquire_source() {
                 tarball_url=$(_default_release_url "$repo_base" "$VERSION")
             fi
             local archive_file="$WORK_DIR/${SOFTWARE_NAME}-${VERSION}.tar.gz"
-            info "从 GitHub 下载 release v${VERSION}..."
+            info "下载 release/tag 版本 ${VERSION}..."
             run wget -q --show-progress -O "$archive_file" "$tarball_url"
             smart_extract "$archive_file" "$WORK_DIR"
             SRC_DIR=$(_find_src_dir "$WORK_DIR")

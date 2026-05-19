@@ -16,6 +16,7 @@
 | gpumd | master | GPU 分子动力学 |
 | lammps | stable | 经典分子动力学 |
 | abacus | LTS | 第一性原理计算 |
+| qe | develop | Quantum ESPRESSO 第一性原理计算 |
 | deepmd-kit | master | 深度势能 |
 | mace | main | 机器学习力场 |
 
@@ -59,12 +60,24 @@ bash sai-compile.sh lammps -v 29Aug2024_update4
 bash sai-compile.sh abacus --gpu-ver 80
 ```
 
+安装 Quantum ESPRESSO 7.5（默认编译 `pwall`）：
+
+```bash
+bash sai-compile.sh qe -v 7.5
+```
+
+安装 Quantum ESPRESSO 并指定多个 make target：
+
+```bash
+bash sai-compile.sh qe -v 7.5 --target "pw ph pp"
+```
+
 ## 常用选项
 
 | 选项 | 说明 |
 |------|------|
 | `-b, --branch BRANCH` | 指定 git 分支 |
-| `-v, --version VERSION` | 指定 GitHub release 版本 |
+| `-v, --version VERSION` | 指定 release/tag 版本 |
 | `-u, --url URL` | 从自定义 URL 下载源码 |
 | `-l, --local PATH` | 使用本地源码目录或压缩包 |
 | `-p, --prefix DIR` | 安装目录（默认当前目录） |

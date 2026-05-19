@@ -21,11 +21,11 @@ PLUGIN_ARGS=()
 # ---------- 公共 usage 头部 ----------
 show_common_usage() {
     cat <<EOF
-下载源 (四选一，默认从 GitHub 克隆):
-  -v, --version VERSION    从 GitHub 下载指定 release 版本
+下载源 (四选一，默认从 Git 仓库克隆):
+  -v, --version VERSION    下载指定 release/tag 版本
   -u, --url URL            从指定 URL 下载压缩包 (支持 tar.gz/tar.bz2/tar.xz)
   -l, --local PATH         使用本地已有的压缩包或已解压目录
-  -r, --repo URL           GitHub 仓库地址
+  -r, --repo URL           Git 仓库地址
   -b, --branch BRANCH      克隆时使用的分支
 
 通用选项:
